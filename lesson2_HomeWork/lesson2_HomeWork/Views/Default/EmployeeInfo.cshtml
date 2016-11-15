@@ -1,0 +1,36 @@
+﻿@model lesson2_HomeWork.Models.Default.Employee
+
+<h2>@ViewBag.Heading</h2>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-condensed">
+        <tr>
+            <th>ID</th>
+            <td>@Html.DisplayFor(e => e.Id)</td>
+        </tr>   
+        <tr>
+         <th>Имя</th>
+               <td>@Html.DisplayFor(e => e.Name)</td>
+           </tr>
+        <tr>
+            <th>Возраст</th>
+            <td>@Html.DisplayFor(e => e.Age)</td>
+        </tr>
+           <tr>
+        <th>Департамент</th>
+               <td>@Html.DisplayFor(e => e.Department)</td>
+           </tr>
+           <tr>
+        <th>Название работы</th>
+               <td>@Html.DisplayFor(e => e.JobTitle)</td>
+           </tr>
+        <tr>
+            <th>Роль</th>
+            <td>@Html.DisplayFor(e => e.Role)</td>
+        </tr>
+        <tr>
+            <th>Зарплата</th>
+            <td>@Html.DisplayFor(e => e.Salary)</td>
+        </tr>      
+     </table>
+    @Html.ActionLink("Назад к списку", "List", "Default")
+</div>

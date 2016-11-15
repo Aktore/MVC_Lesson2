@@ -1,0 +1,16 @@
+﻿@model lesson2_HomeWork.Models.Default.Employee 
+@{
+    ViewBag.Title = "CreateEmployee";
+}
+
+<h2>CreateEmployee</h2>
+
+@using (Html.BeginForm("CreateEmployee","Default", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.EditorForModel()
+    <br>
+    <input type="submit", value="Create" />
+}
+<br>
+@Html.ActionLink("Назад к списку", "List", "Default")

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<lesson2_HomeWork.Models.Default.Employee>
+
+<h2>@ViewBag.Heading</h2>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-condensed">
+        <tr>
+            <th>Имя</th>
+            <th>Должность</th>
+            <th>Департамент</th>
+            <th>Роль</th>
+            <th>&nbsp;</th>
+        </tr>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.Name</td>
+                <td>@employee.JobTitle</td>
+                <td>@employee.Department</td>
+                <td>@employee.Role</td>
+                <td>
+                    @Html.ActionLink("Информация о сотруднике", "EmployeeInfo", new { id = employee.Id})
+                </td>
+                <td>
+                    @Html.ActionLink("Редактировать", "Default", new { id = employee.Id })
+                </td>
+                <td>
+                    @Html.ActionLink("Удалить", "DeleteEmployee", new { id = employee.Id })
+                </td>
+            </tr>
+        }
+    </table> <br>
+  
+    @using (Html.BeginForm("CreateEmployee", "Default", FormMethod.Get))
+    {
+        <input type="submit" , value="Добавить нового сотрудника" />
+    }
+</div>
+
+@if (ViewBag.DisplayDate)
+{
+    <div>
+        @ViewBag.CurrentDate
+    </div>
+}
+
